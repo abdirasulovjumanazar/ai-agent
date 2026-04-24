@@ -1,0 +1,28 @@
+2026-04-24 10:29:04 | INFO  | [3/4] DB FETCH   → table: payments, students, enrollments, courses | rows: 2 | 0.040s
+2026-04-24 10:29:08 | INFO  | [2/2] ANSWER GEN  → ID 3 bo'lgan talaba Physics kursi uchun 500,000.00 to'lagan ... | 3.94s
+2026-04-24 10:29:08 | INFO  | TOTAL: 31.49s
+2026-04-24 10:29:08 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:29:08 | INFO  | answer: "ID 3 bo'lgan talaba Physics kursi uchun 500,000.00 to'lagan va English kursi uch"
+2026-04-24 10:51:30 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 10:51:50 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 10:52:37 | INFO  | question: "id si 6 bolgan studentni hamma fandan gpa sini chiqarib ber"
+2026-04-24 10:52:37 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:52:37 | INFO  | QUESTION: id si 6 bolgan studentni hamma fandan gpa sini chiqarib ber
+2026-04-24 10:52:37 | INFO  | reducer: ['students', 'enrollments', 'grades', 'parents', 'payments', 'attendance', 'courses', 'teachers'] / ['students', 'teachers', 'courses', 'enrollments', 'grades', 'parents', 'payments', 'attendance']
+2026-04-24 10:52:44 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT c.title, g.grade FROM grades g JOIN courses ... | 7.09s
+2026-04-24 10:52:44 | INFO  | [3/4] DB FETCH   → table: grades, courses | rows: 0 | 0.281s
+2026-04-24 10:52:46 | INFO  | [2/2] ANSWER GEN  → 6-ID li talaba uchun hech qanday baho topilmadi. | 1.69s
+2026-04-24 10:52:46 | INFO  | TOTAL: 9.06s
+2026-04-24 10:52:46 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:52:46 | INFO  | answer: "6-ID li talaba uchun hech qanday baho topilmadi."
+2026-04-24 10:54:02 | INFO  | question: "where does bobur live ?"
+2026-04-24 10:54:02 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:54:02 | INFO  | QUESTION: where does bobur live ?
+2026-04-24 10:54:02 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 10:54:03 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT address FROM students WHERE name ILIKE '%Bob... | 1.28s
+2026-04-24 10:54:03 | INFO  | [3/4] DB FETCH   → table: students | rows: 2 | 0.006s
+2026-04-24 10:54:04 | INFO  | [2/2] ANSWER GEN  → Bobur lives in Buxoro and Fergana. | 1.59s
+2026-04-24 10:54:04 | INFO  | TOTAL: 2.89s
+2026-04-24 10:54:04 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:54:04 | INFO  | answer: "Bobur lives in Buxoro and Fergana."
+2026-04-24 10:56:50 | INFO  | AI Agent started — http://127.0.0.1:8000

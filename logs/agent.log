@@ -1,0 +1,175 @@
+2026-04-24 10:29:04 | INFO  | [3/4] DB FETCH   → table: payments, students, enrollments, courses | rows: 2 | 0.040s
+2026-04-24 10:29:08 | INFO  | [2/2] ANSWER GEN  → ID 3 bo'lgan talaba Physics kursi uchun 500,000.00 to'lagan ... | 3.94s
+2026-04-24 10:29:08 | INFO  | TOTAL: 31.49s
+2026-04-24 10:29:08 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:29:08 | INFO  | answer: "ID 3 bo'lgan talaba Physics kursi uchun 500,000.00 to'lagan va English kursi uch"
+2026-04-24 10:51:30 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 10:51:50 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 10:52:37 | INFO  | question: "id si 6 bolgan studentni hamma fandan gpa sini chiqarib ber"
+2026-04-24 10:52:37 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:52:37 | INFO  | QUESTION: id si 6 bolgan studentni hamma fandan gpa sini chiqarib ber
+2026-04-24 10:52:37 | INFO  | reducer: ['students', 'enrollments', 'grades', 'parents', 'payments', 'attendance', 'courses', 'teachers'] / ['students', 'teachers', 'courses', 'enrollments', 'grades', 'parents', 'payments', 'attendance']
+2026-04-24 10:52:44 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT c.title, g.grade FROM grades g JOIN courses ... | 7.09s
+2026-04-24 10:52:44 | INFO  | [3/4] DB FETCH   → table: grades, courses | rows: 0 | 0.281s
+2026-04-24 10:52:46 | INFO  | [2/2] ANSWER GEN  → 6-ID li talaba uchun hech qanday baho topilmadi. | 1.69s
+2026-04-24 10:52:46 | INFO  | TOTAL: 9.06s
+2026-04-24 10:52:46 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:52:46 | INFO  | answer: "6-ID li talaba uchun hech qanday baho topilmadi."
+2026-04-24 10:54:02 | INFO  | question: "where does bobur live ?"
+2026-04-24 10:54:02 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:54:02 | INFO  | QUESTION: where does bobur live ?
+2026-04-24 10:54:02 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 10:54:03 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT address FROM students WHERE name ILIKE '%Bob... | 1.28s
+2026-04-24 10:54:03 | INFO  | [3/4] DB FETCH   → table: students | rows: 2 | 0.006s
+2026-04-24 10:54:04 | INFO  | [2/2] ANSWER GEN  → Bobur lives in Buxoro and Fergana. | 1.59s
+2026-04-24 10:54:04 | INFO  | TOTAL: 2.89s
+2026-04-24 10:54:04 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 10:54:04 | INFO  | answer: "Bobur lives in Buxoro and Fergana."
+2026-04-24 10:56:50 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 11:23:12 | INFO  | question: "alining otasiga qanday bog'lansam boladi?"
+2026-04-24 11:23:12 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:23:12 | INFO  | QUESTION: alining otasiga qanday bog'lansam boladi?
+2026-04-24 11:23:12 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 11:23:15 | ERROR | error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-24 11:23:57 | INFO  | question: "alining otasiga qanday bog'lansam boladi"
+2026-04-24 11:23:57 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:23:57 | INFO  | QUESTION: alining otasiga qanday bog'lansam boladi
+2026-04-24 11:23:57 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 11:24:00 | ERROR | error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-24 11:27:33 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 11:27:41 | INFO  | question: "hi"
+2026-04-24 11:27:41 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:27:41 | INFO  | QUESTION: hi
+2026-04-24 11:27:41 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 11:27:44 | ERROR | error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-24 11:33:40 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 11:33:52 | INFO  | question: "hi"
+2026-04-24 11:33:52 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:33:52 | INFO  | QUESTION: hi
+2026-04-24 11:33:52 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 11:33:54 | INFO  | [1/1] CLASSIFY+ANSWER → general | 1.72s
+2026-04-24 11:33:54 | INFO  | TOTAL: 1.73s
+2026-04-24 11:33:54 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:33:54 | INFO  | answer: "Hello! How can I help you today?"
+2026-04-24 11:34:21 | INFO  | question: "alining otasiga qanday bog'lansam bo'ladi"
+2026-04-24 11:34:21 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:34:21 | INFO  | QUESTION: alining otasiga qanday bog'lansam bo'ladi
+2026-04-24 11:34:21 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 11:34:23 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT T2.phone FROM students AS T1 JOIN parents AS... | 2.01s
+2026-04-24 11:34:23 | INFO  | [3/4] DB FETCH   → table: students, parents | rows: 1 | 0.261s
+2026-04-24 11:34:25 | INFO  | [2/2] ANSWER GEN  → Ali'ning otasiga +998901111111 raqami orqali bog'lanishingiz... | 1.88s
+2026-04-24 11:34:25 | INFO  | TOTAL: 4.15s
+2026-04-24 11:34:25 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:34:25 | INFO  | answer: "Ali'ning otasiga +998901111111 raqami orqali bog'lanishingiz mumkin."
+2026-04-24 11:38:04 | INFO  | question: "hop rahmat"
+2026-04-24 11:38:04 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:38:04 | INFO  | QUESTION: hop rahmat
+2026-04-24 11:38:04 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 11:38:06 | INFO  | [1/1] CLASSIFY+ANSWER → general | 1.92s
+2026-04-24 11:38:06 | INFO  | TOTAL: 1.92s
+2026-04-24 11:38:06 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:38:06 | INFO  | answer: "Hop rahmat! Qanday yordam bera olaman?"
+2026-04-24 11:57:43 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 11:58:02 | INFO  | question: "How many students are enrolled?"
+2026-04-24 11:58:02 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:58:02 | INFO  | QUESTION: How many students are enrolled?
+2026-04-24 11:58:02 | INFO  | reducer: ['students', 'enrollments', 'grades', 'parents', 'payments', 'attendance', 'courses', 'teachers'] / ['students', 'teachers', 'courses', 'enrollments', 'grades', 'parents', 'payments', 'attendance']
+2026-04-24 11:58:20 | INFO  | [1/2] CLASSIFY+SQL → SELECT COUNT(DISTINCT id) FROM students | 17.73s
+2026-04-24 11:58:20 | INFO  | [3/4] DB FETCH   → table: students | rows: 1 | 0.186s
+2026-04-24 11:58:21 | INFO  | [2/2] ANSWER GEN  → There are 8 students enrolled. | 1.33s
+2026-04-24 11:58:21 | INFO  | TOTAL: 19.25s
+2026-04-24 11:58:21 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 11:58:21 | INFO  | answer: "There are 8 students enrolled."
+2026-04-24 12:08:23 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 12:08:53 | INFO  | question: "hi"
+2026-04-24 12:08:53 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:08:53 | INFO  | QUESTION: hi
+2026-04-24 12:08:53 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:08:54 | INFO  | [1/1] CLASSIFY+ANSWER → general | 1.71s
+2026-04-24 12:08:54 | INFO  | TOTAL: 1.71s
+2026-04-24 12:08:54 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:08:54 | INFO  | answer: "Hello! How can I help you today?"
+2026-04-24 12:09:48 | INFO  | question: "nechta talabaning faqat otasi keltirilgan"
+2026-04-24 12:09:48 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:09:48 | INFO  | QUESTION: nechta talabaning faqat otasi keltirilgan
+2026-04-24 12:09:48 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:09:51 | INFO  | [1/2] CLASSIFY+SQL → SELECT COUNT(DISTINCT p1.student_id) FROM parents p1 WHERE p... | 3.31s
+2026-04-24 12:09:51 | INFO  | [3/4] DB FETCH   → table: parents | rows: 1 | 0.375s
+2026-04-24 12:09:56 | INFO  | [2/2] ANSWER GEN  → Faqat otasi keltirilgan talabalar soni: 2. | 4.82s
+2026-04-24 12:09:56 | INFO  | TOTAL: 8.51s
+2026-04-24 12:09:56 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:09:56 | INFO  | answer: "Faqat otasi keltirilgan talabalar soni: 2."
+2026-04-24 12:10:30 | INFO  | question: "ular bilan qanday bog'lansam buladi"
+2026-04-24 12:10:30 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:10:30 | INFO  | QUESTION: ular bilan qanday bog'lansam buladi
+2026-04-24 12:10:30 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:10:32 | INFO  | [1/1] CLASSIFY+ANSWER → general | 1.56s
+2026-04-24 12:10:32 | INFO  | TOTAL: 1.56s
+2026-04-24 12:10:32 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:10:32 | INFO  | answer: "Men sizga qanday yordam bera olaman? Kim bilan bog'lanmoqchisiz?"
+2026-04-24 12:11:18 | INFO  | question: "faqat otasi keltirilgan talabalarning otasi bilan"
+2026-04-24 12:11:18 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:11:18 | INFO  | QUESTION: faqat otasi keltirilgan talabalarning otasi bilan
+2026-04-24 12:11:18 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:11:20 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT
+  s.name AS student_name,
+  p.name AS father... | 2.10s
+2026-04-24 12:11:20 | INFO  | [3/4] DB FETCH   → table: students, parents | rows: 0 | 0.007s
+2026-04-24 12:11:23 | INFO  | [2/2] ANSWER GEN  → Ma'lumotlar bazasida faqat otasi keltirilgan talabalar topil... | 2.88s
+2026-04-24 12:11:23 | INFO  | TOTAL: 4.99s
+2026-04-24 12:11:23 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:11:23 | INFO  | answer: "Ma'lumotlar bazasida faqat otasi keltirilgan talabalar topilmadi."
+2026-04-24 12:11:44 | INFO  | question: "ali nechi yoshda"
+2026-04-24 12:11:44 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:11:44 | INFO  | QUESTION: ali nechi yoshda
+2026-04-24 12:11:44 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:11:45 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT age FROM students WHERE name ILIKE '%ali%' | 1.35s
+2026-04-24 12:11:45 | INFO  | [3/4] DB FETCH   → table: students | rows: 1 | 0.003s
+2026-04-24 12:11:46 | INFO  | [2/2] ANSWER GEN  → Ali is 20 years old. | 1.22s
+2026-04-24 12:11:46 | INFO  | TOTAL: 2.58s
+2026-04-24 12:11:46 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:11:46 | INFO  | answer: "Ali is 20 years old."
+2026-04-24 12:12:14 | INFO  | question: "Who has the highest GPA?"
+2026-04-24 12:12:14 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:12:14 | INFO  | QUESTION: Who has the highest GPA?
+2026-04-24 12:12:14 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:12:15 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT name FROM students ORDER BY gpa DESC LIMIT 1 | 1.22s
+2026-04-24 12:12:15 | ERROR | error: (psycopg2.errors.InvalidColumnReference) for SELECT DISTINCT, ORDER BY expressions must appear in select list
+LINE 1: SELECT DISTINCT name FROM students ORDER BY gpa DESC LIMIT 1
+                                                    ^
+
+[SQL: SELECT DISTINCT name FROM students ORDER BY gpa DESC LIMIT 1]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2026-04-24 12:13:22 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 12:13:45 | INFO  | question: "Who has the highest GPA?"
+2026-04-24 12:13:45 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:13:45 | INFO  | QUESTION: Who has the highest GPA?
+2026-04-24 12:13:45 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:13:46 | INFO  | [1/2] CLASSIFY+SQL → SELECT name, gpa FROM students ORDER BY gpa DESC LIMIT 1 | 1.45s
+2026-04-24 12:13:46 | INFO  | [3/4] DB FETCH   → table: students | rows: 1 | 0.263s
+2026-04-24 12:13:48 | INFO  | [2/2] ANSWER GEN  → Bobur Toshmatov has the highest GPA with 3.90. | 1.32s
+2026-04-24 12:13:48 | INFO  | TOTAL: 3.04s
+2026-04-24 12:13:48 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:13:48 | INFO  | answer: "Bobur Toshmatov has the highest GPA with 3.90."
+2026-04-24 12:18:24 | INFO  | AI Agent started — http://127.0.0.1:8000
+2026-04-24 12:18:55 | INFO  | question: "overdue to'lovlar kimda bor?"
+2026-04-24 12:18:55 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:18:55 | INFO  | QUESTION: overdue to'lovlar kimda bor?
+2026-04-24 12:18:55 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:18:57 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT s.name FROM students s JOIN payments p ON s.... | 1.53s
+2026-04-24 12:18:57 | INFO  | [3/4] DB FETCH   → table: students, payments | rows: 1 | 0.263s
+2026-04-24 12:18:58 | INFO  | [2/2] ANSWER GEN  → Overdue payments are held by Jasur Toshmatov. | 1.54s
+2026-04-24 12:18:58 | INFO  | TOTAL: 3.33s
+2026-04-24 12:18:58 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:18:58 | INFO  | answer: "Overdue payments are held by Jasur Toshmatov."
+2026-04-24 12:19:33 | INFO  | question: "absent bo'lgan talabalar"
+2026-04-24 12:19:33 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:19:33 | INFO  | QUESTION: absent bo'lgan talabalar
+2026-04-24 12:19:33 | INFO  | reducer: no match — using full schema (8 tables)
+2026-04-24 12:19:35 | INFO  | [1/2] CLASSIFY+SQL → SELECT DISTINCT s.name FROM students s JOIN attendance a ON ... | 1.66s
+2026-04-24 12:19:35 | INFO  | [3/4] DB FETCH   → table: students, attendance | rows: 2 | 0.006s
+2026-04-24 12:19:37 | INFO  | [2/2] ANSWER GEN  → Absent students are: Jasur Toshmatov, Zulfiya Rahimova. | 1.75s
+2026-04-24 12:19:37 | INFO  | TOTAL: 3.42s
+2026-04-24 12:19:37 | INFO  | ───────────────────────────────────────────────────────
+2026-04-24 12:19:37 | INFO  | answer: "Absent students are: Jasur Toshmatov, Zulfiya Rahimova."
+2026-04-24 14:19:24 | INFO  | AI Agent started — http://127.0.0.1:8000

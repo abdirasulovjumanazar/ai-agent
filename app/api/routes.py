@@ -13,7 +13,7 @@ def ask(request: AskRequest):
         raise HTTPException(status_code=400, detail="Question cannot be empty")
     log.info(f"question: \"{request.question}\"")
     try:
-        result = run_agent(request.question)
+        result = run_agent(request.question, request.session_id)
         log.info(f"answer: \"{result['answer'][:80]}\"")
         return AskResponse(**result)
     except ValueError as e:

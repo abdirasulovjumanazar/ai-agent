@@ -1,50 +1,49 @@
 import time
-from app.db.executor import execute_query
-from app.db.reducer import reduce_schema
-from app.agent.sql_gen import classify_and_generate, results_to_answer
+from app.vector.query_store import search as cache_search, add as cache_add
+from app.vector.data_store import search as data_search
+from app.agent.sql_gen import answer_from_context
+from app.agent.history import get_history, save_messages
 from app.logger import get_logger
 
 log = get_logger("agent")
 
-# Oddiy in-memory cache: { normalized_question: result }
-_cache: dict[str, dict] = {}
 
-
-def _normalize(q: str) -> str:
-    return q.strip().lower()
-
-
-def run_agent(question: str) -> dict:
+def run_agent(question: str, session_id: str) -> dict:
     t0 = time.perf_counter()
-    key = _normalize(question)
-
-    # Cache dan qaytarish
-    if key in _cache:
-        log.info(f"{'─'*55}")
-        log.info(f"QUESTION: {question}")
-        log.info("CACHE HIT — skipping Gemini")
-        log.info(f"{'─'*55}")
-        return _cache[key]
-
     log.info(f"{'─'*55}")
-    log.info(f"QUESTION: {question}")
+    log.info(f"QUESTION: {question}  session={session_id[:8]}…")
 
-    schema = reduce_schema(question)
-    result = classify_and_generate(question, schema)
+    # 1. Semantic cache
+    try:
+        cached = cache_search(question)
+    except Exception as e:
+        log.warning(f"query_store search failed: {e}")
+        cached = None
 
-    if result["type"] == "general":
-        out = {"answer": result["answer"], "query_used": None, "raw_data": None}
-        _cache[key] = out
-        log.info(f"TOTAL: {time.perf_counter() - t0:.2f}s")
+    if cached:
+        save_messages(session_id, question, cached["answer"])
+        log.info(f"VECTOR CACHE HIT | {time.perf_counter() - t0:.2f}s")
         log.info(f"{'─'*55}")
-        return out
+        return cached
 
-    sql = result["sql"]
-    rows = execute_query(sql)
-    answer = results_to_answer(question, sql, rows)
+    # 2. Chat tarixi
+    history = get_history(session_id)
 
-    out = {"answer": answer, "query_used": sql, "raw_data": rows}
-    _cache[key] = out
+    # 3. Vector search
+    context = data_search(question, n_results=10)
+
+    # 4. Gemini
+    answer = answer_from_context(question, context, history)
+
+    out = {"answer": answer, "query_used": None, "raw_data": None}
+
+    # 5. Cache va tarixga saqlash
+    try:
+        cache_add(question, out)
+    except Exception as e:
+        log.warning(f"query_store save failed: {e}")
+
+    save_messages(session_id, question, answer)
 
     log.info(f"TOTAL: {time.perf_counter() - t0:.2f}s")
     log.info(f"{'─'*55}")

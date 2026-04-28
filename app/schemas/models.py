@@ -3,7 +3,8 @@ from typing import Any
 
 
 class AskRequest(BaseModel):
-    question: str
+    question:   str
+    session_id: str
 
 
 class AskResponse(BaseModel):
